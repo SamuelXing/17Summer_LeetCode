@@ -7,17 +7,23 @@
 using namespace std;
 
 vector<vector<int>> generate(int numRows){
-	for(int i=1; i <= numRows; i++){
-		for(int j=1; j <= i; j++) {
-			if(j==1) {
-				// vec[i][1] = 1
-			}
-			if(j==i) {
-				// vec[i][i] = 1
-			}
+	vector<vector<int>> vec;
+	vec.resize(numRows);
 
+	for(int i=0; i < numRows; i++){
+		vec[i].resize(i+1);	
+	 	for(int j=0; j <= i; j++) {
+			if(j==0) {
+				vec[i][1] = 1;
+			}
+			else if(j==i) {
+				vec[i][i] = 1;
+			}
+			else{
+        vec[i][j]= vec[i-1][j-1]+vec[i-1][j];
+			}
 		}
 	}
-
+	return vec;
 }
 
