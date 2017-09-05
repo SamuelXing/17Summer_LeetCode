@@ -24,6 +24,7 @@ vector<vector<int>> threeSum(vector<int>& nums)
 			continue;
 		}
 
+		// convert this problem to 2Sum
 		int start = i+1, end = nums.size() - 1;
 		int target = -nums[i];
 
