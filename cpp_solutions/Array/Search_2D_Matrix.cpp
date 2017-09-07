@@ -9,7 +9,7 @@
 */
 
 #include <vector>
-
+using namespace std;
 bool searchMatrix(vector<vector<int>>& matrix, int target){
 	// rule out edge cases
 	// have to notice the sequence, incase m or n equals 0
