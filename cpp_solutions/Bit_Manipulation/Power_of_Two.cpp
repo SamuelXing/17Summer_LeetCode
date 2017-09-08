@@ -19,8 +19,8 @@ bool isPowerofTwo(int n)
 }
 
 // Solution 2
-bool isPowerofTwo(int n)
-{
-	if(n < 0) return false;
-	return (n & (n-1)) == 0;
-}
+// bool isPowerofTwo(int n)
+// {
+// 	if(n < 0) return false;
+// 	return (n & (n-1)) == 0;
+// }
