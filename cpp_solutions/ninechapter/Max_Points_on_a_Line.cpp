@@ -25,6 +25,7 @@ public:
     int maxPoints(vector<Point> &points) {
         // write your code here
         unordered_map<float, int> hashMap;
+        int maxNum = 0;
         for(int i=0; i<points.size(); i++){
         	hashMap.clear();
         	hashMap[INT_MIN] = 0;
@@ -35,11 +36,13 @@ public:
         			duplicate++;
         			continue;
         		}
-        		float k = (points[i].x == points[j].x)?INT_MAX:(float)((points[j].y-points[i].y)/(points[j].x - points[i].x));
+        		float k = points[i].x == points[j].x ? INT_MAX : (float)(points[j].y - points[i].y)/(points[j].x - points[i].x);
+        		// pay attention to type casting !!!
+        		//float k = (points[i].x == points[j].x)?INT_MAX:(float)((points[j].y-points[i].y)/(points[j].x - points[i].x));
         		hashMap[k]++;
         	}
         	unordered_map<float, int>::iterator it = hashMap.begin();
-        	int maxNum = 0;
+        	
         	for(; it != hashMap.end(); it++){
         		if(it->second + duplicate > maxNum)
         			maxNum = it->second + duplicate;
