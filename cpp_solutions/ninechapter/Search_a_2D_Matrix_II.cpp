@@ -29,7 +29,7 @@ public:
     int searchMatrix(vector<vector<int>> &matrix, int target) {
         // write your code here
         int ans = 0;
-        for(int i=matrix.size()-1, j=0; i>=0 && j< matrix.size() ;){
+        for(int i=matrix.size()-1, j=0; i>=0 && j< matrix[0].size() ;){
         	if(matrix[i][j] == target){
         		ans++;
         		i--;
