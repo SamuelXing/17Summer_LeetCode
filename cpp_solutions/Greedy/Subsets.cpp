@@ -31,7 +31,7 @@ public:
 		return rst;     
     }
 private:
-	voif dfs(vector<vector<int>>& rst, vector<int>& subset, vector<int>& nums, int start){
+	void dfs(vector<vector<int>>& rst, vector<int>& subset, vector<int>& nums, int start){
 		rst.push_back(subset);
 		for(int i= start; i< nums.size(); i++){
 			subset.push_back(nums[i]);
