@@ -27,11 +27,11 @@ public:
         double rst;
 
         if(totalSize & 1){
-        	rst = findKth(nums1, nums2, 0,0 totalSize/2+1);
+        	rst = findKth(nums1, nums2, 0,0, totalSize/2+1);
         }
         else{
-        	rst = findKth(nums1, nums2, 0, 0, totalSize/2+1) + 
-        		findKth(nums1, nums2, 0, 0, totalSize/2);
+        	rst = (findKth(nums1, nums2, 0, 0, totalSize/2+1) + 
+        		findKth(nums1, nums2, 0, 0, totalSize/2))/2.0;
         }
         return rst;
     }	
@@ -45,7 +45,7 @@ private:
 		}
 		if(k == 1) return min(nums1[pos1], nums2[pos2]);
 		int key1 = pos1 + k/2 - 1 >= nums1.size()? INT_MAX : nums1[pos1 + k/2 - 1];
-		int key2 = pos2 + k/2 - 1 >= nums2.size()? INT_MAX : nums2[pos1 + k/2 -1];
+		int key2 = pos2 + k/2 - 1 >= nums2.size()? INT_MAX : nums2[pos2 + k/2 -1];
 		if(key1 < key2){
 			return findKth(nums1, nums2, pos1+k/2, pos2, k - k / 2);
 		}
