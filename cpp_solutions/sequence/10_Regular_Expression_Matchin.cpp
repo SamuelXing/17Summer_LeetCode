@@ -30,8 +30,43 @@ isMatch("aab", "c*a*b") → true
 class Solution {
 public:
     bool isMatch(string s, string p) {
+        // if s.length() == 0, then p.length() == 0 for follow X*X*
+        if(s.length() == 0)
+        {
+            // key
+            if(p.length() & 1 ) return false;
+            else
+            {
+                for(int i=1; i< p.length(); i+=2)
+                {
+                    if(p[i] != '*')
+                        return false;
+                }
+            }
+            return true;
+        }
+        
+        if(p.length() == 0) 
+            return false;
+        
+        if(p.length() > 1 && p[1] == '*')
+        {
+            if(s[0] == p[0] || p[0] == '.')
+            {
+                // isMatch(s.substr(1), p) : "aaaabb", "a*bb"; isMatch(s, p.substr(2)): "abb", "c*abb";
+                return isMatch(s.substr(1), p) || isMatch(s, p.substr(2));
+            }else
+            {
+                return isMatch(s, p.substr(2));
+            }
+        }
+        else // s.length() >= 1 && (p.length() == 1 || (p.length() > 1 && p[1]!='*') )
+        {
+            if (p[0] == '.' || s[0] == p[0]) {
+                return isMatch(s.substr(1), p.substr(1));
+            } 
+            else return false;
+        }
         
     }
 };
-
-
