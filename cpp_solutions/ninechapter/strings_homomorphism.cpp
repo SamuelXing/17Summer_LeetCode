@@ -32,8 +32,13 @@ public:
     	for(int i=0; i<s.size(); i++){
     		if(hashmap1[s[i]] != t[i])
     			return false;
+    		if(hashmap2[t[i]] != s[i])
+    			return false;
     	}
 
     	return true;
     }
 };
+
+
+
