@@ -1,8 +1,8 @@
-17 Summer Leetcode Solutions
+Algorithm
 ===
 
 ---
 
-This project documented my solutions for leetcode questions.
+Algorithm practice and some solutions for leetcode questions.
 
 
