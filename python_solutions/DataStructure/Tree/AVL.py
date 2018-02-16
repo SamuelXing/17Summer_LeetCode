@@ -156,30 +156,16 @@ class AVL(object):
 			self.postOrder(curNode.right)
 			print(curNode.val, end=" ")
 
+def main():
+	t = AVL()
+	t.insert(1)
+	t.insert(2)
+	t.insert(3)
+	t.inOrder(t.root)
+	print("\n")
 
-t = AVL()
-t.insert(1)
-t.insert(2)
-t.insert(3)
-t.inOrder(t.root)
-print("\n")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if __name__ == '__main__':
+	main()
 
 
 
