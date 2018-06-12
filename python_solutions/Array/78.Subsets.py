@@ -24,16 +24,16 @@ class Solution:
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        ret, temp = [], []
-        self.dfs(sorted(nums), ret, temp, 0)
-        return ret
-    
-    def dfs(self, nums, ret, temp, start):
-        ret.append(temp)
+        self.ret = []
+        self.dfs(sorted(nums), [], 0)
+        return self.ret
+
+    def dfs(self, nums, temp, idx):
+        self.ret.append([x for x in temp])
         
-        for i in range(start, len(nums)):
+        for i in range(idx, len(nums)):
             temp.append(nums[i])
-            self.dfs(nums, ret, temp, i+1)
+            self.dfs(nums, temp, idx+1)
             temp.pop()
 
             
