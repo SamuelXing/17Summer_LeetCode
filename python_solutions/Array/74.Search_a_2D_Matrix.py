@@ -10,21 +10,14 @@ class Solution:
         
         n, m = len(matrix), len(matrix[0])
         start, end = 0, n*m-1
-        while start+1 < end:
+        while start <= end:
             mid = start+int((end-start)/2)
             x, y = int(mid/m), int(mid%m)
             if matrix[x][y] == target:
                 return True
             elif matrix[x][y] < target:
-                start = mid
+                start = mid+1
             else:
-                end = mid
+                end = mid -1
                 
-        x, y = int(start/m), int(start%m)
-        if matrix[x][y] == target:
-            return True
-        x, y = int(end/m), int(end%m)
-        if matrix[x][y] == target:
-            return True
-        
         return False
