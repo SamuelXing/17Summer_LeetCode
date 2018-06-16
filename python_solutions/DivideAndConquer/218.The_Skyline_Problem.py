@@ -29,7 +29,7 @@ class Solution:
         
         # for each critical point c
         for x, negH, R in events:
-            # c.y gets the height of the tallest rectangle over c
+            #  get the height of the tallest rectangle over c
             while x >= hp[0][1]: 
                 heapq.heappop(hp)
             if negH: 
