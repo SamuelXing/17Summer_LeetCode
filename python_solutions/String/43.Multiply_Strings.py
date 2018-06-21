@@ -19,11 +19,16 @@ class Solution:
                 pos[p1] += sum // 10
                 pos[p2] = sum % 10
         
+        print(pos)
         res = []
         for i in range(len(pos)):
             if pos[i] == 0 and len(res) == 0:
                 continue
             else:
                 res.append(str(pos[i]))
+        print(res)
         return ''.join(res) if res else '0'
+
+s = Solution()
+s.multiply("123", "456")
     
