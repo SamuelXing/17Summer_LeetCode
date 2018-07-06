@@ -4,10 +4,29 @@
 #         self.label = x
 #         self.neighbors = []
 
-# DFS
 class Solution:
     # @param node, a undirected graph node
     # @return a undirected graph node
+    def cloneGraph(self, node):
+        if not node:
+            return None
+        
+        hashMap = {}
+        root = UndirectedGraphNode(node.label)
+        hashMap[node.label] = root
+        
+        q = [node]
+        while q:
+            front = q.pop(0)
+            for n in front.neighbors:
+                if n.label not in hashMap:
+                    copy = UndirectedGraphNode(n.label)
+                    hashMap[n.label] = copy
+                    q.append(n)
+                hashMap[front.label].neighbors.append(hashMap[n.label])
+                
+        return root
+        
     def cloneGraph(self, node):
         hashMap = {}
         
