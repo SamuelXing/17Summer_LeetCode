@@ -43,9 +43,9 @@ private:
 
 			used[i] = true;
 			permutation.push_back(nums[i]);
-            dfs(rst, permutation, nums, used);
-            permutation.pop_back();
-            used[i] = false;
+      dfs(rst, permutation, nums, used);
+      permutation.pop_back();
+      used[i] = false;
 		}
 
 	}

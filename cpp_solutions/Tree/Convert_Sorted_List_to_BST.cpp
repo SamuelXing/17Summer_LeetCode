@@ -51,28 +51,33 @@ TreeNode *convertHelper(ListNode *&head, int size) {
     return root;
 }
 
-//Solution 2: slow and fast pointer, runtime error!!!
-
-TreeNode* sortedListToBST(ListNode* head) {
-	return build(head, NULL); 	       
-}
-
-TreeNode* build(ListNode* start, ListNode* end)
-{
-	if(start == end) return NULL;
-
-	ListNode* slow = start;
-	ListNode* fast = start;
-
-	while(fast != end && fast->next != end)
-	{
-		slow = slow->next;
-		fast = fast->next->next;		
-	}
-
-	TreeNode* node = new TreeNode(slow->val);
-	node->left = build(start, slow);
-	node->right = build(slow->next, fast);
-
-	return node;
-}
+//Solution 2: slow and fast pointer
+class Solution {
+public:
+    TreeNode *sortedListToBST(ListNode *head)
+    {
+    	return sortedListToBST(head, NULL);
+    }
+    
+private:
+    TreeNode *sortedListToBST(ListNode *start, ListNode *end)
+    {
+    	if(start == end)
+    		return NULL;
+    	if(start->next == end)    // 
+    	{	
+    		TreeNode *root = new TreeNode(start->val);
+    		return root;
+    	}
+    	ListNode *slow = start, *fast = start;
+    	while( fast != end && fast->next != end )    
+    	{
+    		slow = slow->next;
+    		fast = fast->next->next;
+    	}
+    	TreeNode *root = new TreeNode(slow->val);
+    	root->left = sortedListToBST(start, slow);
+    	root->right = sortedListToBST(slow->next, end);
+    	return root;
+    }
+};
