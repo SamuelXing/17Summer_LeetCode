@@ -45,7 +45,7 @@ int solution2(string &S) {
     	if(S[j] == S[j-1]) cnt += 1;
     	else cnt = 1;
 
-    	if(cnt > 2) i +=2;
+    	if(cnt > 2) i = j - 1;
     	ret = ret < (j - i + 1 ) ? j - i + 1 : ret;
 
     	j++;
@@ -55,15 +55,24 @@ int solution2(string &S) {
 }
 
 int main() {
-	string s1 = "baaabbabbb";
-	cout << solution1(s1) << endl;
+	string s1 = "baaaaaaabbabbb";
 	string s2 = "babba";
-	cout << solution1(s2) << endl;
 	string s3 = "abaaa";
+	string s4 = "baaabbabbb";
+	string s5 = "aaaaaaa";
+
+	cout << "Solution1:" << endl;
+	cout << solution1(s1) << endl;
+	cout << solution1(s2) << endl;
 	cout << solution1(s3) << endl;
+	cout << solution1(s4) << endl;
+	cout << solution1(s5) << endl;
 	
+	cout << "Solution2:" << endl;
 	cout << solution2(s1) << endl;
 	cout << solution2(s2) << endl;
 	cout << solution2(s3) << endl;
+	cout << solution2(s4) << endl;
+	cout << solution2(s5) << endl;
 }
 
