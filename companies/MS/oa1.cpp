@@ -60,6 +60,8 @@ int main() {
 	string s3 = "abaaa";
 	string s4 = "baaabbabbb";
 	string s5 = "aaaaaaa";
+	string s6 = "a";
+
 
 	cout << "Solution1:" << endl;
 	cout << solution1(s1) << endl;
@@ -67,6 +69,7 @@ int main() {
 	cout << solution1(s3) << endl;
 	cout << solution1(s4) << endl;
 	cout << solution1(s5) << endl;
+	cout << solution1(s6) << endl;
 	
 	cout << "Solution2:" << endl;
 	cout << solution2(s1) << endl;
@@ -74,5 +77,7 @@ int main() {
 	cout << solution2(s3) << endl;
 	cout << solution2(s4) << endl;
 	cout << solution2(s5) << endl;
+	cout << solution2(s6) << endl;
+
 }
 

@@ -37,4 +37,8 @@ int main () {
 	cout << solution1(s2) << endl;
 	string s3 = "baabab";
 	cout << solution1(s3) << endl;
+	string s4 = "a";
+	cout << solution1(s4) << endl;
+	string s5 = "aaaaaaaaaa";
+	cout << solution1(s5) << endl;
 }
